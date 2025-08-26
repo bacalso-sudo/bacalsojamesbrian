@@ -62,35 +62,32 @@
         .gallery-container {
             width: 80%;
             margin: auto;
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            grid-gap: 10px; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .gallery-item {
-            
+            width: 30%;
+            margin: 10px;
             border: 1px solid #ddd;
-            border-radius: 10px;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            aspect-ratio: 1 / 1;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 100%; 
+            height: 200px; /* Fixed height for uniform appearance */
             object-fit: cover;
             display: block;
             transition: transform 0.3s ease;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        
+        /* Responsive layout - makes the website look good on all screen sizes */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -108,19 +105,8 @@
                 margin-bottom: 10px;
             }
 
-            .gallery-container {
-                grid-template-columns: repeat(2, 1fr); 
-            }
-
             .gallery-item {
-                width: 100%; 
-            }
-        }
-
-
-        @media (max-width: 576px) {
-            .gallery-container {
-                grid-template-columns: 1fr;
+                width: 45%; /* Adjusted for better spacing on smaller screens */
             }
         }
     </style>
@@ -165,4 +151,14 @@
             <img src="image6.jpg" alt="Image 6">
         </div>
         <div class="gallery-item">
-            <img src="image7.jpg" alt="Image 7"
+            <img src="image7.jpg" alt="Image 7">
+        </div>
+        <div class="gallery-item">
+            <img src="image8.jpg" alt="Image 8">
+        </div>
+        <div class="gallery-item">
+            <img src="image9.jpg" alt="Image 9">
+        </div>
+    </section>
+</body>
+</html>
